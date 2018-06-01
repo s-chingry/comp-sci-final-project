@@ -4,7 +4,9 @@ public class Introduction {
 	public static void introduction() throws InterruptedException {
 		String lovedOne = "spouse";
 		Scanner console = new Scanner(System.in);
-		System.out.println("Please Enter Your Name:");
+		System.out.println("Maximise the window for a better game experience.");
+		Thread.sleep(3000);
+		System.out.println("Please enter your name:");
 		String name = console.next();
 		System.out.println("How old would you like to be?");
 		String age = console.next();
@@ -38,43 +40,85 @@ public class Introduction {
 		Thread.sleep(1000);
 		System.out.println("You wake up to birds chirping. As you look around, you realize you're on a beach. You see the helicopter next to you but you don't know where your " +lovedOne + " is." );
 		Thread.sleep(4000);
-		System.out.println("You get up and walk to the helicopter to see if its still operational. The engine is missing and there are some wiring issues.");
+		System.out.println("You get up and walk to the helicopter to see if its still operational. The engine and oil tank is missing.");
 		Thread.sleep(4000);
 		System.out.println("Instructions: Your goal is to escape the island. You can do so by fixing up the helicopter or by waiting for somebody to rescue you.");
 		Thread.sleep(4000);
 		System.out.println("For stats, type \"Stats\" during your decision turns.");
+		Thread.sleep(1000);
+		System.out.println("Each action you choose decreases your thirst and hunger by 4. Choosing to go to sleep lowers your thirst and hunger by 8 but increases your health by 10");
 	}
 	public static void adventure() throws InterruptedException {
 		System.out.println("What is your first course of action? (Type A, B or C)");
 		Thread.sleep(1000);
 		System.out.println("A: Venture into the forest");
+		Thread.sleep(1000);
 		System.out.println("B: Walk along the beach");
+		Thread.sleep(1000);
 		System.out.println("C: Go to sleep");
 		Scanner console = new Scanner(System.in);
 		String choice1 = console.next();
-		choice1.toUpperCase();
-		if(choice1 == "A") {
+		String choice1Upper=choice1.toUpperCase();
+		action(x);
+		if(choice1Upper.equals("A")) {
 			System.out.println("You walk to the entrance of the forest. Right when you step onto the dirt, the wind blows through the trees and you hear howling in the distance.");
+			Thread.sleep(3000);
 			System.out.println("What do you choose to do?");
+			Thread.sleep(1000);
 			System.out.println("A: Continue exploring in the forest");
+			Thread.sleep(1000);
 			System.out.println("B: Go back to the helicopter.");
 			String choice2 = console.next();
-			choice2.toUpperCase();
-			if(choice2 == "B") {
+			String choice2Upper=choice2.toUpperCase();
+			action(x);
+			if(choice2Upper.equals("B")) {
 				System.out.println("You walk back to the helicopter.");
+				for (int i =0; i<3;i++) {
+					System.out.println(".");
+					Thread.sleep(2000);
+				}
 				adventure();
 			}
 			System.out.println("You continue walking deeper into the forest. The trees around you seem like they are moving.");
-			System.out.println("In the corner of your eye, you see something move in the bushes.")
+			Thread.sleep(2000);
+			System.out.println("In the corner of your eye, you see something move in the bushes.");
+			Thread.sleep(1500);
+			System.out.println("What do you do?");
+			Thread.sleep(1000);
+			System.out.println("A: Pick up a rock nearby and go investigate");
+			Thread.sleep(1000);
+			System.out.println("B: Ignore it and continue walking foward");
+			Thread.sleep(1000);
+			System.out.println("C: Go to sleep");
+			String choice3 = console.next();
+			String choice3Upper=choice3.toUpperCase();
+			if(choice3Upper.equals("A")) {
+				Thread.sleep(1000);
+				System.out.println("You peer into the bushes..");
+				Thread.sleep(3000);
+				System.out.println("A fox jumps out and scrathes your face! You lose 5 points of health.");
+				x.health -= 5;
+				Thread.sleep(1000);
+				System.out.println("What do you do?");
+				Thread.sleep(1000);
+				System.out.println("A: Run away");
+				Thread.sleep(1000);
+				System.out.print("B: Hit it with a rock. (75% chance of winning)");
+				String choice4 = console.next();
+				String choice4Upper = choice4.toUpperCase();
+				
+				
+			}
+
 		}
 		if(choice1 == "B") {
-			
+
 		}
-		
-		
+
+
 	}
 	public static void main(String [] args) throws InterruptedException {
-		introduction();
+		//introduction();
 		adventure();
 	}
 }
